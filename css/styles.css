@@ -1,0 +1,422 @@
+/* 
+ * Custom CSS for Unsubscribe Page
+ * This builds on top of Suitsupply global CSS
+ */
+
+/* Base Styles and Variables */
+:root {
+    --spacing-container: clamp(16px, 5vw, 80px);
+    --border-radius: 4px;
+    --transition-standard: 0.3s ease;
+    --max-width: 1440px;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background-light);
+    min-height: 100vh;
+}
+
+/* Layout & Container */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-container);
+}
+
+/* Header */
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-outline);
+    background-color: var(--color-surface);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__logo {
+    max-width: 180px;
+}
+
+.header__logo-img {
+    width: 100%;
+    height: auto;
+}
+
+/* Main Content */
+.main {
+    min-height: calc(100vh - 200px);
+}
+
+/* Hero Section */
+.unsubscribe-hero {
+    padding: clamp(40px, 10vw, 120px) 0 clamp(30px, 5vw, 60px);
+    text-align: center;
+    background-color: var(--color-background-light);
+}
+
+.unsubscribe-hero h1 {
+    margin-bottom: clamp(16px, 2vw, 24px);
+    color: var(--color-primary);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unsubscribe-hero p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-secondary);
+}
+
+/* Form Section */
+.unsubscribe-form {
+    padding: clamp(40px, 5vw, 80px) 0;
+}
+
+.unsubscribe-form .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .unsubscribe-form .container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 60px;
+    }
+    
+    .form-wrapper {
+        flex: 1;
+        max-width: 550px;
+    }
+    
+    .unsubscribe-image {
+        flex: 1;
+    }
+}
+
+.form-wrapper {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    padding: clamp(24px, 5vw, 40px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-wrapper h2 {
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-outline);
+    padding-bottom: 16px;
+    color: var(--color-primary);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-outline);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color var(--transition-standard);
+}
+
+.form-control:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.form-control.error {
+    border-color: var(--color-error);
+}
+
+.form-options {
+    margin-bottom: 32px;
+}
+
+.form-options h3 {
+    margin-bottom: 16px;
+    color: var(--color-primary);
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.checkbox-group {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 8px;
+    padding: 12px;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-standard);
+}
+
+.checkbox-group:hover {
+    background-color: var(--color-background-light);
+}
+
+.checkbox-group input {
+    grid-row: 1;
+    grid-column: 1;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: var(--color-primary);
+}
+
+.checkbox-group label {
+    grid-row: 1;
+    grid-column: 2;
+    margin: 0;
+    font-weight: 500;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.checkbox-group p {
+    grid-row: 2;
+    grid-column: 2;
+    margin: 0;
+    color: var(--color-secondary);
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (min-width: 768px) {
+    .form-actions {
+        flex-direction: row;
+        gap: 24px;
+    }
+}
+
+.btn-primary, 
+.btn-outline {
+    padding: 12px 24px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-extended);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition-standard);
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #000;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-background-light);
+}
+
+.btn-link {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color var(--transition-standard);
+}
+
+.btn-link:hover {
+    color: var(--color-brand);
+}
+
+/* Success Message */
+.success-message {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background-color: var(--color-success);
+    color: white;
+    font-size: 36px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Image */
+.unsubscribe-image {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .unsubscribe-image {
+        display: block;
+    }
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .responsive-img {
+        height: 100%;
+        max-height: 600px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .responsive-img {
+        max-height: 700px;
+    }
+}
+
+/* Contact Section */
+.contact-section {
+    padding: clamp(40px, 5vw, 80px) 0;
+    text-align: center;
+    background-color: var(--color-background);
+}
+
+.contact-section h2 {
+    margin-bottom: 16px;
+    color: var(--color-primary);
+}
+
+.contact-section p {
+    margin-bottom: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-secondary);
+}
+
+/* Footer */
+.footer {
+    padding: 40px 0;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer__content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+.footer__logo {
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .footer__logo {
+        margin: 0;
+    }
+}
+
+.footer__logo-img {
+    width: 100%;
+    filter: brightness(0) invert(1);
+}
+
+.footer__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .footer__menu {
+        flex-direction: row;
+        gap: 24px;
+    }
+}
+
+.footer__menu a {
+    color: var(--color-surface);
+    text-decoration: none;
+    transition: opacity var(--transition-standard);
+}
+
+.footer__menu a:hover {
+    opacity: 0.8;
+}
+
+/* Mobile Optimization */
+@media (max-width: 767px) {
+    .unsubscribe-hero h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+    
+    .unsubscribe-hero p {
+        font-size: 18px;
+    }
+    
+    .btn-primary, .btn-outline {
+        width: 100%;
+    }
+}
